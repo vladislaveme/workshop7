@@ -110,6 +110,9 @@ var initialData = {
   }
 };
 
+function addIndexes(db, cb) {
+  db.collection('feedItems').createIndex({ "contents.contents": "text" }, null, cb);
+}
 /**
  * Resets a collection.
  */
